@@ -1,0 +1,27 @@
+<md-content class="md-padding pad-ver-0">
+  <form>
+	  <md-input-container>
+      <label>Name</label>
+      <input ng-model="newParty.name">
+    </md-input-container>
+	  <md-input-container>
+      <label>Description</label>
+      <input ng-model="newParty.description">
+	  </md-input-container>
+	  <md-button class="md-raised" ng-click="parties.push(newParty)">Add</md-button>
+  </form>
+</md-content>
+
+<md-list>
+  <md-item ng-repeat="party in parties">
+	  <md-divider ng-if="$first"></md-divider>
+	  <md-item-content class="md-tile-content" layout="row" layout-align="space-between">
+		  <md-button class="md-primary" ng-href="/parties/{{party._id}}">{{party.name}}</md-button>
+		  <md-button class="md-primary">{{party.description}}</md-button>
+		  <md-button class="md-fab" aria-label="X" ng-click="remove(party)">
+			  <md-icon md-svg-src="ic_delete_24px.svg"></md-icon>
+		  </md-button>
+    </md-item-content>
+	  <md-divider></md-divider>
+  </md-item>
+</md-list>
