@@ -10,4 +10,10 @@ angular.module("vegasParties").controller("PartiesListCtrl",
     $scope.removeAll = function(){
       $scope.parties.remove();
     };
+
+    $scope.getPicture = function() {
+      $meteor.getPicture().then(function(imageData) {
+        $scope.parties[0].imageData = imageData;
+      });
+    };
 });
