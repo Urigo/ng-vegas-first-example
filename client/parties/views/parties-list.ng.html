@@ -16,13 +16,13 @@
 <md-list>
   <md-item ng-repeat="party in parties">
 	  <md-divider ng-if="$first"></md-divider>
-	  <md-item-content class="md-tile-content" layout="row" layout-align="space-between">
-		  <md-button class="md-primary" ng-href="/parties/{{party._id}}">{{party.name}}</md-button>
-		  <md-button class="md-primary">{{party.description}}</md-button>
+	  <md-item-content class="md-tile-content" layout="row" layout-align="space-between" layout-wrap>
+		  <md-button class="md-primary" flex="33" ng-href="/parties/{{party._id}}">{{party.name}}</md-button>
+		  <md-button class="md-primary" flex="33">{{party.description}}</md-button>
 		  <md-button class="md-fab" aria-label="X" ng-click="remove(party)">
 			  <md-icon md-svg-src="ic_delete_24px.svg"></md-icon>
 		  </md-button>
-			<img ng-src="{{ party.imageData }}" />
+			<img flex="100" ng-src="{{ party.imageData }}" />
     </md-item-content>
 	  <md-divider></md-divider>
   </md-item>
